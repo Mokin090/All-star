@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Sistema All Star v-1.1</title>
+</head>
+<body>
+
+<h1>Sistema All Star</h1>
+<h2>Versão 1.0</h2>
+
+<hr>
+
+<h2>CAPÍTULO 1 — ATRIBUTOS PRIMÁRIOS</h2>
+
+<h3>1.1 Os Seis Atributos</h3>
+<p>Todo personagem possui seis atributos primários, cada um com valor entre 1 e 100. O valor representa diretamente a chance de sucesso em rolagens ligadas àquele atributo.</p>
+
+<table border="1" cellpadding="4">
+  <tr>
+    <th>Atributo</th>
+    <th>Abreviação</th>
+    <th>Define</th>
+  </tr>
+  <tr>
+    <td>Força</td>
+    <td>FOR</td>
+    <td>Poder físico bruto, dano corpo-a-corpo</td>
+  </tr>
+  <tr>
+    <td>Destreza</td>
+    <td>DES</td>
+    <td>Velocidade, reflexos, iniciativa</td>
+  </tr>
+  <tr>
+    <td>Constituição</td>
+    <td>CON</td>
+    <td>Resistência, pontos de vida</td>
+  </tr>
+  <tr>
+    <td>Inteligência</td>
+    <td>INT</td>
+    <td>Raciocínio, Conhecimento Adquirido</td>
+  </tr>
+  <tr>
+    <td>Sabedoria</td>
+    <td>SAB</td>
+    <td>Força de vontade, Resistência Mental</td>
+  </tr>
+  <tr>
+    <td>Presença</td>
+    <td>PRE</td>
+    <td>Carisma, liderança, interação social</td>
+  </tr>
+</table>
+
+<h3>1.2 Geração de Atributos por Pontos de Criação (PC)</h3>
+<p>Todo personagem começa com <strong>30 pontos em cada atributo</strong> gratuitamente. Esse é o valor base, um ser humano funcional, mas abaixo do padrão de um aventureiro. A partir daí, o jogador gasta <strong>Pontos de Criação (PC)</strong> para elevar os atributos conforme desejar.</p>
+<p>O orçamento padrão é de <strong>100 PC</strong>. Pontos não gastos em atributos podem ser usados para comprar pontos de perícia (1 PC = 5 pontos de perícia).</p>
+
+<h4>Custo para elevar atributos acima de 30:</h4>
+<table border="1" cellpadding="4">
+  <tr>
+    <th>Faixa do Atributo</th>
+    <th>Custo por +5 pontos</th>
+  </tr>
+  <tr><td>31 – 50</td><td>1 PC</td></tr>
+  <tr><td>51 – 65</td><td>2 PC</td></tr>
+  <tr><td>66 – 75</td><td>3 PC</td></tr>
+  <tr><td>76 – 85</td><td>5 PC</td></tr>
+  <tr><td>86+</td><td>8 PC (Perguntar ao Narrador)</td></tr>
+</table>
+
+<p>Atributos são comprados em <strong>blocos de 5 pontos</strong>. O mínimo absoluto por atributo é 10 e o máximo na criação sem aprovação especial é 85.</p>
+
+<h4>Devolver Pontos (atributos abaixo de 30):</h4>
+<p>O jogador pode reduzir atributos abaixo de 30 para recuperar PC, usando a mesma tabela de custo invertida. O total recuperável é limitado a <strong>30 PC</strong>. O mínimo absoluto por atributo é 10.</p>
+
+<p><em>Exemplo: Com 100 PC, um jogador compra DES 65 gastando 10 PC (4 blocos em 31–50 = 4 PC + 3 blocos em 51–65 = 6 PC). Os 90 PC restantes são distribuídos entre os demais atributos e perícias.</em></p>
+
+<h3>1.3 Atributos Derivados</h3>
+<p>Calculados uma única vez na criação, sem rolagem.</p>
+
+<table border="1" cellpadding="4">
+  <tr>
+    <th>Derivado</th>
+    <th>Cálculo</th>
+    <th>Função</th>
+  </tr>
+  <tr>
+    <td>Pontos de Vida (PV)</td>
+    <td>(CON + FOR) / 10, arredondado para cima</td>
+    <td>Dano que o personagem suporta antes de cair</td>
+  </tr>
+  <tr>
+    <td>Iniciativa</td>
+    <td>(DES+INT) / 2</td>
+    <td>Usado como valor de perícia na rolagem de iniciativa no início do combate</td>
+  </tr>
+  <tr>
+    <td>Bônus de Dano (BD)</td>
+    <td>(FOR + CON - 60) / 20, arredondado para baixo, mínimo -1(Veja tabela abaixo)</td>
+    <td>Dado extra somado ao dano corpo-a-corpo</td>
+  </tr>
+  <tr>
+    <td>Limiar de Dano</td>
+    <td>PV / 2, arredondado para baixo</td>
+    <td>Sofrer Dano acima disso causa Ferimento Grave</td>
+  </tr>
+</table>
+
+<h4>Tabela de Bônus de Dano:</h4>
+<table border="1" cellpadding="4">
+  <tr><th>Resultado da Fórmula</th><th>Bônus de Dano</th></tr>
+  <tr><td>-1 ou menos</td><td>-1d4</td></tr>
+  <tr><td>0</td><td>+0</td></tr>
+  <tr><td>1</td><td>+1d4</td></tr>
+  <tr><td>2</td><td>+1d6</td></tr>
+  <tr><td>3</td><td>+1d8</td></tr>
+  <tr><td>4+</td><td>+1d10</td></tr>
+</table>
+
+<hr>
+
+<h2>CAPÍTULO 2 — PERÍCIAS</h2>
+
+<h3>2.1 Estrutura das Perícias</h3>
+<p>Perícias são habilidades específicas derivadas dos atributos. Cada perícia possui um <strong>valor base</strong> calculado diretamente do atributo que a sustenta. Esse valor base é a chance inicial de sucesso na criação do personagem.</p>
+<p>Fórmula geral: <strong>Valor Base = Atributo ÷ 2</strong> (arredondado para baixo), exceto onde especificado.</p>
+
+<h3>2.2 Lista de Perícias</h3>
+<p>Perícias marcadas com (*) são especificas,o jogador deve definir um campo específico ao adquiri-las (ex: Conhecimento*: História, Condução*: Motocicleta). Pericias marcadas com (!) São intrinsicas não é possivel usa-las se não tiver grau de especializacao nelas</p>
+
+<table border="1" cellpadding="4">
+  <tr>
+    <th>Perícia</th>
+    <th>Atributo Base</th>
+    <th>Valor Inicial</th>
+    <th>Uso Primário</th>
+  </tr>
+
+  <tr><td colspan="4"><strong>— COMBATE —</strong></td></tr>
+  <tr><td>Combate Corpo-a-Corpo</td><td>DES</td><td>DES ÷ 2</td><td>Atacar em luta próxima com armas ou desarmado</td></tr>
+  <tr><td>Combate à Distância</td><td>DES</td><td>DES ÷ 4</td><td>Atacar com projéteis ou poderes de alcance</td></tr>
+  <tr><td>Aparar</td><td>DES</td><td>DES ÷ 4</td><td>Bloquear ataques ativamente com arma ou escudo</td></tr>
+  <tr><td>Esquiva</td><td>DES</td><td>DES ÷ 4</td><td>Desviar de ataques pelo movimento do corpo</td></tr>
+
+  <tr><td colspan="4"><strong>— FÍSICO —</strong></td></tr>
+  <tr><td>Atletismo</td><td>FOR ou DES</td><td>Atributo ÷ 2</td><td>Correr, saltar, escalar, nadar, arremessar</td></tr>
+  <tr><td>Acrobacia</td><td>DES</td><td>DES ÷ 3</td><td>Equilíbrio, quedas controladas, manobras de movimento</td></tr>
+  <tr><td>Furtividade</td><td>DES</td><td>DES ÷ 3</td><td>Mover-se e agir sem ser detectado</td></tr>
+  <tr><td>Vigor</td><td>CON</td><td>CON ÷ 2</td><td>Sustentar esforço prolongado, resistir à exaustão física</td></tr>
+
+  <tr><td colspan="4"><strong>— MENTE —</strong></td></tr>
+  <tr><td>Percepção</td><td>INT</td><td>INT ÷ 2</td><td>Detectar detalhes pelo ambiente com os sentidos</td></tr>
+  <tr><td>Análise</td><td>INT</td><td>INT ÷ 3</td><td>Deduzir, raciocinar sobre pistas e padrões</td></tr>
+  <tr><td>Conhecimento*</td><td>INT</td><td>INT ÷ 4</td><td>Domínio teórico de uma área específica de estudo</td></tr>
+  <tr><td>Força Mental!</td><td>SAB</td><td>SAB ÷ 2</td><td>Resistir a efeitos mentais, medo, manipulação, coerção</td></tr>
+
+  <tr><td colspan="4"><strong>— SOCIAL —</strong></td></tr>
+  <tr><td>Persuasão</td><td>PRE</td><td>PRE ÷ 2</td><td>Convencer, negociar, seduzir, intimidar com charme ou pressão</td></tr>
+  <tr><td>Dissimulação</td><td>PRE ou INT</td><td>Atributo ÷ 3</td><td>Mentir, atuar, esconder intenções e emoções</td></tr>
+  <tr><td>Intuição</td><td>SAB</td><td>SAB ÷ 3</td><td>Perceber mentiras, motivações ocultas, ler pessoas</td></tr>
+
+  <tr><td colspan="4"><strong>— SOBREVIVÊNCIA —</strong></td></tr>
+  <tr><td>Primeiros Socorros</td><td>INT</td><td>INT ÷ 3</td><td>Estabilizar feridos, tratar dano imediato em campo</td></tr>
+  <tr><td>Medicina!</td><td>INT</td><td>INT ÷ 5</td><td>Tratamento avançado, cirurgia, diagnóstico de doenças</td></tr>
+  <tr><td>Sobrevivência*!</td><td>INT ou CON</td><td>Atributo ÷ 4</td><td>Orientar-se, encontrar recursos, resistir a um ambiente hostil</td></tr>
+  <tr><td>Mecanismos!</td><td>INT ou DES</td><td>Atributo ÷ 4</td><td>Operar, reparar ou sabotar dispositivos mecânicos e eletrônicos</td></tr>
+  <tr><td>Condução*!</td><td>DES</td><td>DES ÷ 4</td><td>Operar um tipo de veículo em situações de risco</td></tr>
+</table>
+
+<h3>2.3 Distribuição de Perícias na Criação</h3>
+<p>Perícias são compradas com os mesmos <strong>Pontos de Criação (PC)</strong> usados para atributos. O jogador gerencia um único orçamento para as duas coisas, cada PC não gasto em atributos pode ser convertido em pontos de perícia.</p>
+<ul>
+  <li>1 PC = 5 pontos de perícia.</li>
+  <li>Os pontos são somados ao valor base já existente da perícia.</li>
+  <li>Nenhuma perícia pode ultrapassar 70% em bonus de seu valor base.</li>
+</ul>
+<p><em>Exemplo: Um jogador começa com 100 PC. Gasta 60 PC em atributos e sobram 40 PC, convertidos em 200 pontos de perícia. Com DES 50, Combate Corpo-a-Corpo tem base 25%. O jogador investe 30 pontos de perícia, chegando a 55%.</em></p>
+
+<hr>
+
+<h2>CAPÍTULO 3 — RESOLUÇÃO DE TAREFAS</h2>
+
+<h3>3.1 A Regra Central: Roll-Under</h3>
+<p>Role 1d100 (dois dados de 10 lados, um para dezenas e um para unidades). Se o resultado for <strong>igual ou menor</strong> ao valor da perícia ou atributo relevante, a ação é bem-sucedida. Se for maior, é uma falha.</p>
+
+<h3>3.2 Graus de Sucesso</h3>
+<p>Um único resultado de dado pode gerar quatro níveis de qualidade. Essa é a espinha dorsal que permite narrar com granularidade sem precisar de tabelas extras.</p>
+
+<table border="1" cellpadding="4">
+  <tr>
+    <th>Grau</th>
+    <th>Condição de Rolagem</th>
+    <th>Resultado Narrativo</th>
+  </tr>
+  <tr>
+    <td><strong>Sucesso Crítico</strong></td>
+    <td>Resultado 1 no 1d100</td>
+    <td>Resultado excepcional.</td>
+  </tr>
+  <tr>
+    <td><strong>Sucesso Extremo</strong></td>
+    <td>Resultado ≤ Valor da Pericia/Atributo ÷ 5</td>
+    <td>Resultado muito superior ao esperado.</td>
+  </tr>
+  <tr>
+    <td><strong>Sucesso</strong></td>
+    <td>Resultado ≤ Valor da Pericia/Atributo ÷ 2</td>
+    <td>Sucesso Esperado.</td>
+  </tr>
+  <tr>
+    <td><strong>Meio Sucesso</strong></td>
+    <td>Resultado ≤ Valor da Pericia/Atributo</td>
+    <td>Sucesso mas com complicação</td>
+  </tr>
+  <tr>
+    <td><strong>Falha</strong></td>
+    <td>Resultado > Valor da Pericia/Atributo</td>
+    <td>Falha ou Sucesso com Complicação Grande</td>
+  </tr>
+  <tr>
+    <td><strong>Falha Crítica</strong></td>
+    <td>Resultado 99 ou 100 no 1d100</td>
+    <td>Desastre.</td>
+  </tr>
+</table>
+
+<p><em>Exemplo de Graus com Perícia 60%: SC = 01 | SE = 01–12 | S = 01–30 | MS = 01–60 | F = 61–98 | FC = 99–100</em></p>
+
+<h3>3.3 Modificadores de Dificuldade</h3>
+
+<ul>
+  <li><strong>Vantagem:</strong> Role dois d100, use o resultado mais baixo.</li>
+  <li><strong>Desvantagem:</strong> Role dois d100, use o resultado mais alto.</li>
+  <li>Múltiplas vantagens e desvantagens se cancelam até restar apenas uma, ou nenhuma.</li>
+</ul>
+
+<h3>3.4 Rolagens Opostas</h3>
+<p>Quando dois Personagens se enfrentam diretamente, ambos rolam. Quem obtiver o <strong>grau de sucesso mais alto</strong> vence. Em caso de empate de grau, quem obteve o resultado numérico <strong>mais alto sem ultrapassar seu valor</strong> vence.</p>
+<p>Hierarquia de graus: SC > SE > S > MS > F > FC.</p>
+
+<h3>3.5 Rolagens em Grupo</h3>
+<p>Quando o grupo precisa agir em conjunto, o Narrador designa um líder que rola com Vantagem se ao menos metade dos outros membros obtiver Sucesso Parcial ou melhor. Se a maioria falhar, o líder rola com Desvantagem.</p>
+
+<hr>
+
+<h2>CAPÍTULO 4 — SISTEMA DE COMBATE</h2>
+
+<h3>4.1 Princípio de Combate</h3>
+<p>O combate é uma sequência de rolagens opostas onde cada decisão tem consequências mecânicas imediatas. </p>
+
+<h3>4.2 Estrutura do Round</h3>
+<p>Um round representa aproximadamente 5 segundos de ação. A estrutura é:</p>
+<ol>
+  <li><strong>Declaração:</strong> Todos declaram sua intenção em ordem inversa de iniciativa (quem age por último declara primeiro).</li>
+  <li><strong>Rolagem de Iniciativa:</strong> Cada personagem rola DES. Quem obtiver o melhor grau de sucesso age primeiro. Em caso de empate de grau, o maior resultado numérico vai primeiro.</li>
+  <li><strong>Resolução:</strong> Em ordem de iniciativa, cada ação é resolvida como uma rolagem oposta.</li>
+</ol>
+
+<h3>4.3 Ações por Round</h3>
+<p>Um round representa aproximadamente 5 segundos. Cada personagem dispõe de três categorias de ação, gerenciadas de forma independente:</p>
+
+<table border="1" cellpadding="4">
+  <tr>
+    <th>Categoria</th>
+    <th>Quantidade</th>
+    <th>O que pode ser feito</th>
+  </tr>
+  <tr>
+    <td><strong>Ação Padrão</strong></td>
+    <td>1 por round</td>
+    <td>Atacar, usar uma Habilidade Especial, realizar uma tarefa complexa, ajudar um aliado com rolagem.</td>
+  </tr>
+  <tr>
+    <td><strong>Ação de Movimento</strong></td>
+    <td>1 por round</td>
+    <td>Mover-se, levantar-se, reposicionar-se no combate, pensar, analizar, sacar, usar ou guardar um item.</td>
+  </tr>
+  <tr>
+    <td><strong>Ação Livre</strong></td>
+    <td>Ilimitadas</td>
+    <td>Falar, olhar ao redor, fazer um sinal.</td>
+  </tr>
+  <tr>
+    <td><strong>Reação</strong></td>
+    <td>1 por round</td>
+    <td>Defender-se de um ataque recebido.</td>
+  </tr>
+</table>
+
+<h4>Trocas entre categorias:</h4>
+<ul>
+  <li>O personagem pode <strong>abrir mão da Ação Padrão</strong> para ganhar uma segunda Reação no round.</li>
+  <li>Tendo como mesmo fim, algumas Ações Especificas trocam as categorias de Ações (<a>Ver Ações Especificas</a>)</li>
+</ul>
+
+<h4>Ação Bônus:</h4>
+<p>Ações Bônus são concedidas exclusivamente por <strong>Habilidades Especiais, efeitos de cenário ou Sucessos Críticos</strong>,nunca existem por padrão. Quando concedida, uma Ação Bônus só pode ser usada para o efeito específico que a originou (exemplo: uma habilidade que concede um ataque adicional rápido). Não pode ser trocada por Reação ou Movimento.</p>
+
+<h3>4.4 O Ciclo de Ataque e Defesa</h3>
+<p>Cada troca de ataque é uma <strong>rolagem oposta</strong> entre Ataque e Defesa.</p>
+
+<table border="1" cellpadding="4">
+  <tr>
+    <th>Opção do Defensor</th>
+    <th>Perícia Usada</th>
+    <th>Resultado se Ganhar</th>
+  </tr>
+  <tr>
+    <td>Esquivar</td>
+    <td>Esquiva</td>
+    <td>Evita completamente o ataque</td>
+  </tr>
+  <tr>
+    <td>Aparar</td>
+    <td>Aparar</td>
+    <td>Reduz o dano pela metade (arredondado para baixo)</td>
+  </tr>
+  <tr>
+    <td>Ignorar</td>
+    <td>—</td>
+    <td>Recebe dano total; Atacante tem Vantagem</td>
+  </tr>
+</table>
+
+<h4>Resultado da Rolagem Oposta de Ataque:</h4>
+<table border="1" cellpadding="4">
+  <tr>
+    <th>Situação</th>
+    <th>Efeito</th>
+  </tr>
+  <tr>
+    <td>Atacante ganha (qualquer grau)</td>
+    <td>Rola dano + BD normalmente.</td>
+  </tr>
+  <tr>
+    <td>Atacante ganha, grau SE</td>
+    <td>Rola Dano + BD, Penetração 50%.</td>
+  </tr>
+  <tr>
+    <td>Atacante ganha, grau SC</td>
+    <td>Dano máximo do dado + BD. Penetração 100%.</td>
+  </tr>
+  <tr>
+    <td>Defensor ganha(Qualquer Grau)</td>
+    <td>Ataque bloqueado ou desviado.</td>
+  </tr>
+  <tr>
+    <td>Ambos falham</td>
+    <td>Nenhum dano.</td>
+  </tr>
+  <tr>
+    <td>Atacante, Perde FC</td>
+    <td>Perde turno, Fica com desvantagem, dependendo do Narrador.</td>
+  </tr>
+</table>
+
+<h3>4.5 Dano</h3>
+<p>Cada arma possui dano e tipo de dano associados. O <strong>Tipo de Dano</strong> (Cortante, Perfurante, Contundente) pode interagir com armaduras e habilidades especiais. Os Efeitos de Combate disponíveis por arma serão detalhados no capítulo de Ações Especiais.</p>
+<p><strong>Bônus de Dano (BD)</strong> se aplica apenas a armas corpo-a-corpo marcadas com <strong>*</strong>.</p>
+
+<h4>Combate Desarmado</h4>
+<table border="1" cellpadding="4">
+  <tr>
+    <th>Ataque</th>
+    <th>Dano</th>
+    <th>Tipo</th>
+  </tr>
+  <tr><td>Soco / Tapa *</td><td>1d3</td><td>Contundente</td></tr>
+  <tr><td>Chute *</td><td>1d4</td><td>Contundente</td></tr>
+  <tr><td>Cabeçada *</td><td>1d3</td><td>Contundente</td></tr>
+</table>
+
+<h4>Armas de Uma Mão</h4>
+<table border="1" cellpadding="4">
+  <tr>
+    <th>Arma</th>
+    <th>Dano</th>
+    <th>Tipo</th>
+  </tr>
+  <tr><td>Faca *</td><td>1d3</td><td>Cortante/Perfurante</td></tr>
+  <tr><td>Adaga *</td><td>1d4+1</td><td>Cortante/Perfurante</td></tr>
+  <tr><td>Machado de Mão *</td><td>1d6</td><td>Cortante</td></tr>
+  <tr><td>Machadinha (arremesso) *</td><td>1d6</td><td>Cortante</td></tr>
+  <tr><td>Clava / Porrete *</td><td>1d6</td><td>Contundente</td></tr>
+  <tr><td>Mangual *</td><td>1d6</td><td>Contundente</td></tr>
+  <tr><td>Corrente *</td><td>1d4</td><td>Contundente</td></tr>
+  <tr><td>Picareta Militar *</td><td>1d6+1</td><td>Perfurante</td></tr>
+  <tr><td>Bola e Corrente *</td><td>1d6+1</td><td>Contundente</td></tr>
+  <tr><td>Machado de Batalha *</td><td>1d6+1</td><td>Cortante</td></tr>
+  <tr><td>Espada Curta *</td><td>1d6</td><td>Cortante/Perfurante</td></tr>
+  <tr><td>Sabre *</td><td>1d6+1</td><td>Cortante/Perfurante</td></tr>
+  <tr><td>Cimitarra *</td><td>1d8</td><td>Cortante</td></tr>
+  <tr><td>Falchion *</td><td>1d6+2</td><td>Cortante</td></tr>
+  <tr><td>Espadão de uma mão *</td><td>1d8</td><td>Cortante/Perfurante</td></tr>
+  <tr><td>Maça *</td><td>1d8</td><td>Contundente</td></tr>
+  <tr><td>Rapier *</td><td>1d8</td><td>Perfurante</td></tr>
+  <tr><td>Lança Curta *</td><td>1d8+1</td><td>Perfurante</td></tr>
+  <tr><td>Tridente *</td><td>1d8</td><td>Perfurante</td></tr>
+  <tr><td>Lança de Cavalaria *</td><td>1d10+2</td><td>Perfurante</td></tr>
+  <tr><td>Rede</td><td>1d4</td><td>—</td></tr>
+  <tr><td>Chicote</td><td>1d3</td><td>Contundente</td></tr>
+</table>
+
+<h4>Armas de Duas Mãos</h4>
+<table border="1" cellpadding="4">
+  <tr>
+    <th>Arma</th>
+    <th>Dano</th>
+    <th>Tipo</th>
+  </tr>
+  <tr><td>Garrote *</td><td>1d2</td><td>Contundente</td></tr>
+  <tr><td>Cajado / Bastão *</td><td>1d8</td><td>Contundente</td></tr>
+  <tr><td>Machado de Batalha (2M) *</td><td>1d8+1</td><td>Cortante</td></tr>
+  <tr><td>Glaive / Rhomphaia *</td><td>1d10+2</td><td>Cortante</td></tr>
+  <tr><td>Grande Machado *</td><td>2d6+2</td><td>Cortante</td></tr>
+  <tr><td>Grande Clava *</td><td>2d6</td><td>Contundente</td></tr>
+  <tr><td>Grande Martelo *</td><td>1d10+3</td><td>Contundente</td></tr>
+  <tr><td>Grande Espada *</td><td>2d8</td><td>Cortante/Perfurante</td></tr>
+  <tr><td>Espadão Longo (2M) *</td><td>1d10</td><td>Cortante/Perfurante</td></tr>
+  <tr><td>Mangual Militar *</td><td>1d10</td><td>Contundente</td></tr>
+  <tr><td>Alabarda / Poleaxe *</td><td>1d8+2</td><td>Cortante/Perfurante</td></tr>
+  <tr><td>Lança Longa *</td><td>1d10+1</td><td>Perfurante</td></tr>
+  <tr><td>Pike / Sarissa *</td><td>1d10+2</td><td>Perfurante</td></tr>
+  <tr><td>Xyston *</td><td>1d10</td><td>Perfurante</td></tr>
+</table>
+
+<h4>Escudos</h4>
+<table border="1" cellpadding="4">
+  <tr>
+    <th>Escudo</th>
+    <th>Dano (ataque)</th>
+    <th>Tipo</th>
+    <th>Absorção</th>
+  </tr>
+  <tr><td>Broquel</td><td>1d3</td><td>Contundente</td><td>1</td></tr>
+  <tr><td>Escudo Heater</td><td>1d4</td><td>Contundente</td><td>2</td></tr>
+  <tr><td>Escudo Hoplita</td><td>1d4</td><td>Contundente</td><td>2</td></tr>
+  <tr><td>Escudo Kite</td><td>1d4</td><td>Contundente</td><td>2</td></tr>
+  <tr><td>Scutum</td><td>1d4</td><td>Contundente</td><td>3</td></tr>
+  <tr><td>Escudo Viking</td><td>1d4</td><td>Contundente</td><td>2</td></tr>
+</table>
+
+<h4>Armas de Ataque à Distância</h4>
+<table border="1" cellpadding="4">
+  <tr>
+    <th>Arma</th>
+    <th>Dano</th>
+    <th>Tipo</th>
+    <th>Alcance (Curto/Efetivo/Longo)</th>
+  </tr>
+  <tr><td>Pedra / Arremesso</td><td>1d3</td><td>Contundente</td><td>5/10/20m</td></tr>
+  <tr><td>Adaga (arremesso)</td><td>1d4</td><td>Perfurante</td><td>5/10/20m</td></tr>
+  <tr><td>Dardo</td><td>1d4</td><td>Perfurante</td><td>5/10/20m</td></tr>
+  <tr><td>Shuriken / Kunai</td><td>1d4</td><td>Perfurante</td><td>5/10/20m</td></tr>
+  <tr><td>Bolas</td><td>1d4</td><td>Contundente</td><td>10/25/50m</td></tr>
+  <tr><td>Disco</td><td>1d4+1</td><td>Contundente</td><td>5/20/40m</td></tr>
+  <tr><td>Javelin</td><td>1d8+1</td><td>Perfurante</td><td>10/20/50m</td></tr>
+  <tr><td>Arco Curto</td><td>1d6</td><td>Perfurante</td><td>15/100/200m</td></tr>
+  <tr><td>Arco Longo</td><td>1d8</td><td>Perfurante</td><td>15/125/250m</td></tr>
+  <tr><td>Arco Recurvo</td><td>1d8</td><td>Perfurante</td><td>15/125/250m</td></tr>
+  <tr><td>Funda</td><td>1d8</td><td>Contundente</td><td>10/150/300m</td></tr>
+  <tr><td>Besta Leve</td><td>1d8</td><td>Perfurante</td><td>20/100/200m</td></tr>
+  <tr><td>Besta Pesada</td><td>1d10</td><td>Perfurante</td><td>20/150/300m</td></tr>
+</table>
+
+<p><em>Alcance Curto não tem penalidade. Alcance Efetivo não tem penalidade. Alcance Longo impõe Desvantagem e requer Sucesso para atingir — Sucesso Parcial erra. Ataques além do Alcance Longo são impossíveis sem equipamento especial.</em></p>
+<h3>4.6 Absorção</h3>
+<p>Representa proteção física. Reduz diretamente o dano recebido antes de subtrair dos PV.</p>
+
+<table border="1" cellpadding="4">
+  <tr><th>Tipo de Proteção</th><th>Absorção</th></tr>
+  <tr><td>Nenhuma (pele nua)</td><td>0</td></tr>
+  <tr><td>Proteção Leve (couro, roupas reforçadas)</td><td>1</td></tr>
+  <tr><td>Proteção Média (metal leve, proteção moderna)</td><td>2</td></tr>
+  <tr><td>Proteção Pesada (armadura completa)</td><td>4</td></tr>
+  <tr><td>Proteção Excepcional (material especial)</td><td>6</td></tr>
+</table>
+
+<p><em>Nota: Dano mínimo após Absorção é sempre 1, se o ataque conectou.</em></p>
+
+<h3>4.7 Estados de Saúde</h3>
+<p>Os PV determinam o estado do personagem.</p>
+
+<table border="1" cellpadding="4">
+  <tr>
+    <th>Estado</th>
+    <th>Condição</th>
+    <th>Efeito Mecânico</th>
+  </tr>
+  <tr>
+    <td>Íntegro</td>
+    <td>PV acima do Limiar de Dano</td>
+    <td>Sem penalidades</td>
+  </tr>
+  <tr>
+    <td>Ferido</td>
+    <td>PV igual ou abaixo do Limiar de Dano</td>
+    <td>Todas as rolagens com Desvantagem</td>
+  </tr>
+  <tr>
+    <td>Incapacitado</td>
+    <td>PV = 0 ou menos</td>
+    <td>Inconsciente ou morrendo.</td>
+  </tr>
+</table>
+
+<p><strong>Ferimento Grave:</strong> Se um único golpe causar dano igual ou maior ao Limiar de Dano em um único impacto, o personagem deve rolar CON ou cair incapacitado imediatamente, mesmo que ainda tenha PV positivos..</p>
+
+<h3>4.8 Morte e Estabilização</h3>
+<p>Um personagem com PV 0 ou menos está <strong>Morrendo</strong>. Ele perde 1 PV adicional por round até ser estabilizado ou atingir PV negativo igual ao seu CON ÷ 10 (arredondado para baixo), quando morre definitivamente.</p>
+<p>Para estabilizar um personagem morrendo: um aliado deve usar a ação de Medicina com Dificuldade padrão. Em caso de sucesso, o personagem para de perder PV (mas permanece Incapacitado).</p>
+
+<h3>4.9 Recuperação</h3>
+<table border="1" cellpadding="4">
+  <tr><th>Tipo de Recuperação</th><th>PV Recuperados</th><th>Condição</th></tr>
+  <tr><td>Descanso Curto (1 hora)</td><td>1 PV</td><td>Sem atividade de combate</td></tr>
+  <tr><td>Descanso Longo (8 horas)</td><td>CON ÷ 10 (mínimo 1)</td><td>Descanso completo</td></tr>
+  <tr><td>Tratamento Médico (Medicina bem-sucedida)</td><td>+2 PV imediatos</td><td>Uma vez por descanso longo por personagem</td></tr>
+</table>
+
+<hr>
+
+<h2>CAPÍTULO 5 — PROGRESSÃO</h2>
+
+<h3>5.1 Filosofia de Progressão</h3>
+<p>Personagens evoluem fazendo coisas. O sistema usa <strong>Marcas de Experiência</strong>.</p>
+
+<h3>5.2 Marcas de Experiência em Perícias, Atributos e Habilidades</h3>
+<p>Durante o jogo, toda vez que um personagem obtiver um <strong>Sucesso ou superior</strong> em uma rolagem de perícia, Atributo ou Habilidade em situação de risco genuíno, o jogador marca aquela perícia com um círculo (tick).</p>
+<p>Ao final da sessão, o jogador rola 1d100 para cada marca. No caso das pericias e atributos, se o resultado for <strong>maior que o valor atual</strong>, ela aumenta em 1d6(Pericias) e 1d4(Atributos) pontos. Se for menor ou igual, a perícia não evolui. Ja no caso das habilidades se tirar 70+ no dado vc ganha 1 Ponto Skill Tree</p>
+<p><strong>Teto de Perícias:</strong> Nenhuma perícia pode ultrapassar 90% por meio de Marcas de Experiência normais. Valores entre 91% e 99% exigem Treinamento Especializado (ver abaixo).</p>
+
+<h3>5.3 Treinamento Especializado</h3>
+<p>O personagem pode gastar tempo de descanso (entre aventuras) em treinamento focado. Por cada período significativo de treinamento (determinado pelo Narrador, dias, semanas, dependendo do contexto narrativo), a perícia treinada recebe +1d4 pontos, até o máximo de 95%.</p>
+<p>O treinamento requer acesso a um mestre ou recurso adequado (biblioteca, mentor, prática estruturada). O Narrador determina a disponibilidade.</p>
+
+<h3>5.5 Habilidades Especiais</h3>
+<p>O sistema reserva espaço para capacidades que transcendem as perícias normais. Habilidades Especiais são intencionalmente não detalhadas aqui — é o espaço onde o Narrador insere os elementos temáticos do cenário (poderes, técnicas únicas, transformações, etc.).</p>
+<p>Mecanicamente, toda Habilidade Especial segue a mesma estrutura base para consistência:</p>
+<ol>
+  <li><strong>Atributo Âncora:</strong> A habilidade se associa a um dos seis atributos primários e usa esse atributo (ou uma perícia derivada) como valor de ativação.</li>
+  <li><strong>Custo de Ativação:</strong> A habilidade consome um recurso. O sistema sugere usar POD como reserva de "combustível" para habilidades especiais: cada uso custa entre 1 e 10 pontos de POD, recuperados após descanso longo.</li>
+  <li><strong>Efeito Mecânico Definido:</strong> Toda habilidade especial deve ter um efeito expresso em termos do sistema: dano extra, modificador de dado, alteração de estado, etc. Nenhum efeito narrativo vago sem ancoragem mecânica.</li>
+  <li><strong>Rolagem de Ativação:</strong> Rola-se contra o Atributo Âncora ou perícia associada. O grau de sucesso determina a potência do efeito.</li>
+</ol>
+
+<hr>
+
+<h2>CAPÍTULO 6 — REFERÊNCIA</h2>
+
+<h3>6.1 Calibração de Probabilidades</h3>
+<table border="1" cellpadding="4">
+  <tr>
+    <th>Valor de Perícia</th>
+    <th>Competência Descritiva</th>
+    <th>Chance de Sucesso Parcial ou melhor</th>
+  </tr>
+  <tr><td>01–20%</td><td>Novato</td><td>20%</td></tr>
+  <tr><td>21–40%</td><td>Aprendiz</td><td>40%</td></tr>
+  <tr><td>41–60%</td><td>Competente</td><td>60%</td></tr>
+  <tr><td>61–75%</td><td>Profissional</td><td>75%</td></tr>
+  <tr><td>76–90%</td><td>Expert</td><td>90%</td></tr>
+  <tr><td>91–99%</td><td>Mestre</td><td>99%</td></tr>
+</table>
+</body>
+</html>
