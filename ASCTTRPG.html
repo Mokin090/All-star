@@ -550,6 +550,1551 @@
 
 <hr>
 
+<h2>CAPÍTULO 1 — CONDIÇÕES BÁSICAS</h2>
+
+<h3>1.1 Estrutura das Condições</h3>
+<p>Toda condição no sistema segue uma estrutura padronizada para facilitar o gerenciamento:</p>
+
+<div class="mechanic-box">
+  <strong>Componentes de uma Condição:</strong>
+  <ul>
+    <li><strong>Nome e Tipo:</strong> Identificação clara do efeito</li>
+    <li><strong>Origem:</strong> Como a condição é aplicada</li>
+    <li><strong>Efeito Mecânico:</strong> Penalidades ou alterações expressas em termos do sistema</li>
+    <li><strong>Duração:</strong> Quanto tempo persiste</li>
+    <li><strong>Remoção:</strong> Como a condição termina</li>
+    <li><strong>Stackabilidade:</strong> Se pode acumular com ela mesma</li>
+  </ul>
+</div>
+
+<h3>1.2 Aplicação de Condições</h3>
+<p>Condições são aplicadas através de:</p>
+<ul>
+  <li><strong>Ataques bem-sucedidos</strong> com armas/habilidades que causam condições</li>
+  <li><strong>Grau de Sucesso:</strong> Sucessos melhores podem intensificar ou prolongar condições</li>
+  <li><strong>Testes Opostos:</strong> Falhar em resistir a certos efeitos</li>
+  <li><strong>Efeitos Ambientais:</strong> Terreno, clima, ou cenário</li>
+</ul>
+
+<hr>
+
+<h2>CAPÍTULO 2 — CONDIÇÕES DE DANO CONTÍNUO (DoT)</h2>
+
+<h3>2.1 Sangramento</h3>
+<table>
+  <tr>
+    <th>Aspecto</th>
+    <th>Mecânica</th>
+  </tr>
+  <tr>
+    <td><span class="condition-type dot">DoT</span> <strong>Tipo</strong></td>
+    <td>Dano contínuo físico</td>
+  </tr>
+  <tr>
+    <td><strong>Origem</strong></td>
+    <td>Ataques Cortantes ou Perfurantes com Sucesso Extremo ou superior</td>
+  </tr>
+  <tr>
+    <td><strong>Efeito</strong></td>
+    <td>
+      <strong>Leve:</strong> 1d4 de dano no início de cada turno do alvo (ignora Absorção)<br>
+      <strong>Moderado:</strong> 1d6 de dano no início de cada turno do alvo (ignora Absorção)<br>
+      <strong>Grave:</strong> 1d8 de dano no início de cada turno do alvo (ignora Absorção)
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Duração</strong></td>
+    <td>
+      <strong>Leve:</strong> 3 rodadas<br>
+      <strong>Moderado:</strong> 5 rodadas<br>
+      <strong>Grave:</strong> Até ser tratado
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Aplicação por Grau</strong></td>
+    <td>
+      <strong>Sucesso Extremo:</strong> Sangramento Leve<br>
+      <strong>Sucesso Crítico:</strong> Sangramento Moderado<br>
+      <strong>Habilidade Especial:</strong> Pode causar Sangramento Grave
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Remoção</strong></td>
+    <td>
+      <strong>Leve/Moderado:</strong> Espera natural OU Ação Padrão + teste Primeiros Socorros (Dificuldade 50%)<br>
+      <strong>Grave:</strong> Ação Padrão + teste Medicina (Dificuldade 60%) OU habilidade de cura
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Stackabilidade</strong></td>
+    <td>Múltiplas fontes de Sangramento <strong>acumulam dano</strong> (máximo 3 instâncias simultâneas)</td>
+  </tr>
+</table>
+
+<div class="example">
+  <strong>Exemplo:</strong> Katana acerta com Sucesso Extremo (dano 2d8 = 11). O alvo sofre 11 de dano imediato + Sangramento Leve (1d4 por rodada por 3 rodadas). No próximo turno do alvo, ele rola 1d4 = 3 de dano adicional.
+</div>
+
+<h3>2.2 Envenenamento</h3>
+<table>
+  <tr>
+    <th>Aspecto</th>
+    <th>Mecânica</th>
+  </tr>
+  <tr>
+    <td><span class="condition-type dot">DoT</span> <span class="condition-type debuff">Debuff</span> <strong>Tipo</strong></td>
+    <td>Dano contínuo + penalidade em atributo</td>
+  </tr>
+  <tr>
+    <td><strong>Origem</strong></td>
+    <td>Ataques venenosos, armadilhas, ou habilidades especiais</td>
+  </tr>
+  <tr>
+    <td><strong>Efeito</strong></td>
+    <td>
+      <strong>Veneno Fraco:</strong> 1d4 de dano/rodada + -5 em CON<br>
+      <strong>Veneno Moderado:</strong> 1d6 de dano/rodada + -10 em CON e FOR<br>
+      <strong>Veneno Letal:</strong> 1d8 de dano/rodada + -15 em CON e FOR + Desvantagem em Vigor
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Duração</strong></td>
+    <td>
+      <strong>Fraco:</strong> 4 rodadas<br>
+      <strong>Moderado:</strong> 6 rodadas<br>
+      <strong>Letal:</strong> Até ser tratado
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Teste de Resistência</strong></td>
+    <td>No início de cada turno, o alvo pode rolar CON:<br>
+      <strong>Sucesso Extremo:</strong> Remove imediatamente<br>
+      <strong>Sucesso:</strong> Reduz gravidade em 1 nível<br>
+      <strong>Falha:</strong> Persiste normalmente
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Remoção</strong></td>
+    <td>
+      Ação Padrão + teste Medicina (Dificuldade 40%/60%/80%) OU antídoto apropriado OU habilidade de cura que remove venenos
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Stackabilidade</strong></td>
+    <td>Não acumula; veneno mais potente substitui o anterior</td>
+  </tr>
+</table>
+
+<h3>2.3 Queimadura</h3>
+<table>
+  <tr>
+    <th>Aspecto</th>
+    <th>Mecânica</th>
+  </tr>
+  <tr>
+    <td><span class="condition-type dot">DoT</span> <strong>Tipo</strong></td>
+    <td>Dano contínuo por fogo/calor</td>
+  </tr>
+  <tr>
+    <td><strong>Origem</strong></td>
+    <td>Ataques de fogo, explosões, ácido, habilidades elementais</td>
+  </tr>
+  <tr>
+    <td><strong>Efeito</strong></td>
+    <td>
+      1d6 de dano de fogo no início de cada turno do alvo (ignora Absorção)<br>
+      -5 em Acrobacia e Furtividade (dor ao se mover)
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Duração</strong></td>
+    <td>3 rodadas OU até ser apagado</td>
+  </tr>
+  <tr>
+    <td><strong>Apagar Fogo</strong></td>
+    <td>
+      <strong>Ação Padrão:</strong> Parar, Derrubar, Rolar (DES ou Atletismo 40%)<br>
+      <strong>Ação de Movimento:</strong> Mergulhar em água<br>
+      <strong>Aliado:</strong> Ação Padrão para apagar (automático se tiver água/cobertor)
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Stackabilidade</strong></td>
+    <td>Não acumula; reaplica a duração para 3 rodadas</td>
+  </tr>
+</table>
+
+<div class="note">
+  <strong>Regra Especial - Propagação:</strong> Se um personagem em Queimadura se aproximar a 1 metro de materiais inflamáveis (roupas leves, madeira seca, papel), o Narrador pode exigir um teste de DES para evitar espalhar o fogo.
+</div>
+
+<h3>2.4 Corrosão</h3>
+<table>
+  <tr>
+    <th>Aspecto</th>
+    <th>Mecânica</th>
+  </tr>
+  <tr>
+    <td><span class="condition-type dot">DoT</span> <span class="condition-type special">Equipment</span> <strong>Tipo</strong></td>
+    <td>Dano contínuo + degradação de equipamento</td>
+  </tr>
+  <tr>
+    <td><strong>Origem</strong></td>
+    <td>Ácidos, habilidades corrosivas, energia amaldiçoada</td>
+  </tr>
+  <tr>
+    <td><strong>Efeito</strong></td>
+    <td>
+      1d6 de dano por rodada (ignora Absorção)<br>
+      A cada rodada, Absorção do alvo reduz permanentemente em 1 (mínimo 0)<br>
+      Armas corroídas sofrem -1 no dado de dano (mínimo 1d3)
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Duração</strong></td>
+    <td>4 rodadas OU até ser neutralizado</td>
+  </tr>
+  <tr>
+    <td><strong>Neutralização</strong></td>
+    <td>
+      Água em abundância (Ação Padrão, automático)<br>
+      Teste Medicina/Conhecimento*:Química (50%) para neutralizar com substância apropriada
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Reparo</strong></td>
+    <td>Absorção e dano de arma perdidos são permanentes até reparo profissional (downtime entre aventuras)</td>
+  </tr>
+  <tr>
+    <td><strong>Stackabilidade</strong></td>
+    <td>Não acumula; reaplica duração</td>
+  </tr>
+</table>
+
+<hr>
+
+<h2>CAPÍTULO 3 — CONDIÇÕES DE CONTROLE</h2>
+
+<h3>3.1 Agarrado</h3>
+<table>
+  <tr>
+    <th>Aspecto</th>
+    <th>Mecânica</th>
+  </tr>
+  <tr>
+    <td><span class="condition-type control">Controle</span> <strong>Tipo</strong></td>
+    <td>Restrição de movimento</td>
+  </tr>
+  <tr>
+    <td><strong>Origem</strong></td>
+    <td>Ataque desarmado bem-sucedido com intenção de agarrar, habilidades especiais</td>
+  </tr>
+  <tr>
+    <td><strong>Efeito</strong></td>
+    <td>
+      Velocidade de movimento reduzida a 0<br>
+      Desvantagem em DES<br>
+      Não pode usar Esquiva (apenas Aparar com -20)<br>
+      Ataques contra o alvo Agarrado têm Vantagem
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Aplicação</strong></td>
+    <td>
+      <strong>Atacante:</strong> Ação Padrão, teste Atletismo vs Atletismo/Acrobacia do alvo<br>
+      <strong>Sucesso:</strong> Alvo fica Agarrado<br>
+      <strong>Manutenção:</strong> Atacante gasta Ação Padrão cada rodada para manter
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Libertação</strong></td>
+    <td>
+      <strong>Força Bruta:</strong> Ação Padrão, FOR vs FOR do oponente<br>
+      <strong>Escapar:</strong> Ação Padrão, Acrobacia vs Atletismo do oponente<br>
+      <strong>Sucesso:</strong> Liberta-se e pode se mover 1,5 metros<br>
+      <strong>Falha:</strong> Permanece Agarrado
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Notas</strong></td>
+    <td>
+      Quem está Agarrando também não pode se mover mais de 1,5 metros<br>
+      Pode atacar com armas leves ou habilidades enquanto Agarrado (com Desvantagem)
+    </td>
+  </tr>
+</table>
+
+<h3>3.2 Atordoado</h3>
+<table>
+  <tr>
+    <th>Aspecto</th>
+    <th>Mecânica</th>
+  </tr>
+  <tr>
+    <td><span class="condition-type control">Controle</span> <strong>Tipo</strong></td>
+    <td>Incapacitação temporária</td>
+  </tr>
+  <tr>
+    <td><strong>Origem</strong></td>
+    <td>Golpes na cabeça, explosões, habilidades sônicas, ataques elétricos</td>
+  </tr>
+  <tr>
+    <td><strong>Efeito</strong></td>
+    <td>
+      <strong>Atordoado Leve (1 rodada):</strong>
+      <ul>
+        <li>Desvantagem em todas as rolagens</li>
+        <li>Movimento reduzido pela metade</li>
+        <li>-20 em Iniciativa no próximo round</li>
+      </ul>
+      <strong>Atordoado Pesado (1d3 rodadas):</strong>
+      <ul>
+        <li>Perde Ação Padrão</li>
+        <li>Pode usar apenas Ação de Movimento</li>
+        <li>Desvantagem em Esquiva e Aparar</li>
+        <li>Não pode usar Reação</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Aplicação</strong></td>
+    <td>
+      <strong>Leve:</strong> Dano Contundente na cabeça com Sucesso<br>
+      <strong>Pesado:</strong> Dano Contundente na cabeça com Sucesso Extremo/Crítico, explosões próximas, habilidades específicas
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Recuperação</strong></td>
+    <td>
+      Duração natural OU aliado pode usar Ação Padrão + teste Primeiros Socorros (40%) para reduzir 1 rodada
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Stackabilidade</strong></td>
+    <td>Não acumula; efeito mais severo substitui o anterior</td>
+  </tr>
+</table>
+
+<h3>3.3 Paralisado</h3>
+<table>
+  <tr>
+    <th>Aspecto</th>
+    <th>Mecânica</th>
+  </tr>
+  <tr>
+    <td><span class="condition-type control">Controle</span> <strong>Tipo</strong></td>
+    <td>Incapacidade de movimento muscular</td>
+  </tr>
+  <tr>
+    <td><strong>Origem</strong></td>
+    <td>Venenos paralisantes, ataques elétricos, habilidades especiais, pontos de pressão</td>
+  </tr>
+  <tr>
+    <td><strong>Efeito</strong></td>
+    <td>
+      Não pode se mover ou tomar ações físicas<br>
+      Absorção reduzida a 0<br>
+      Ataques contra alvo Paralisado têm Vantagem<br>
+      Ataques corpo-a-corpo contra alvo Paralisado são Sucesso Automático (role apenas dano)<br>
+      Pode falar e usar habilidades puramente mentais (se houver)
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Duração</strong></td>
+    <td>
+      <strong>Paralisia Curta:</strong> 1d3 rodadas<br>
+      <strong>Paralisia Longa:</strong> 1d6 rodadas<br>
+      <strong>Paralisia Completa:</strong> Até ser tratado
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Teste de Resistência</strong></td>
+    <td>
+      No fim de cada turno, role CON:<br>
+      <strong>Sucesso Extremo:</strong> Remove imediatamente<br>
+      <strong>Sucesso:</strong> Reduz duração em 1 rodada<br>
+      <strong>Falha:</strong> Persiste
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Tratamento</strong></td>
+    <td>
+      Medicina (60%) para paralisia por veneno/pressão<br>
+      Habilidades de cura específicas<br>
+      Estimulação elétrica controlada (Medicina 70%)
+    </td>
+  </tr>
+</table>
+
+<h3>3.4 Caído/Derrubado</h3>
+<table>
+  <tr>
+    <th>Aspecto</th>
+    <th>Mecânica</th>
+  </tr>
+  <tr>
+    <td><span class="condition-type control">Controle</span> <strong>Tipo</strong></td>
+    <td>Posição vulnerável</td>
+  </tr>
+  <tr>
+    <td><strong>Origem</strong></td>
+    <td>Ataques que derrubam, tropeçar, terreno escorregadio, explosões</td>
+  </tr>
+  <tr>
+    <td><strong>Efeito</strong></td>
+    <td>
+      Movimento reduzido pela metade enquanto no chão<br>
+      Ataques corpo-a-corpo contra você têm Vantagem<br>
+      Seus ataques corpo-a-corpo têm Desvantagem<br>
+      Ataques à distância contra você têm Desvantagem (alvo menor)<br>
+      Seus ataques à distância têm Desvantagem
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Levantar-se</strong></td>
+    <td>
+      <strong>Ação de Movimento:</strong> Levanta-se normalmente<br>
+      <strong>Ação Padrão + Acrobacia (40%):</strong> Levanta-se e pode se mover normalmente no mesmo turno<br>
+      Se Agarrado ou Paralisado, não pode levantar-se
+    </td>
+  </tr>
+</table>
+
+<h3>3.5 Enraizado</h3>
+<table>
+  <tr>
+    <th>Aspecto</th>
+    <th>Mecânica</th>
+  </tr>
+  <tr>
+    <td><span class="condition-type control">Controle</span> <strong>Tipo</strong></td>
+    <td>Preso no lugar</td>
+  </tr>
+  <tr>
+    <td><strong>Origem</strong></td>
+    <td>Gelo nos pés, raízes, gravidade aumentada, campos magnéticos, habilidades especiais</td>
+  </tr>
+  <tr>
+    <td><strong>Efeito</strong></td>
+    <td>
+      Não pode se mover do lugar<br>
+      Pode girar e usar ações normalmente<br>
+      Pode atacar e defender-se sem penalidade<br>
+      -20 em Esquiva (não pode se afastar)
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Libertação</strong></td>
+    <td>
+      <strong>Força:</strong> Ação Padrão, FOR (50%)<br>
+      <strong>Quebrar vínculo:</strong> Atacar a fonte (gelo, raízes, etc.) — PV determinado pelo Narrador<br>
+      <strong>Dissipar:</strong> Habilidades apropriadas
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Duração</strong></td>
+    <td>Até ser quebrado/dissipado ou 1d6 rodadas (o que vier primeiro)</td>
+  </tr>
+</table>
+
+<hr>
+
+<h2>CAPÍTULO 4 — CONDIÇÕES SENSORIAIS E MENTAIS</h2>
+
+<h3>4.1 Cego</h3>
+<table>
+  <tr>
+    <th>Aspecto</th>
+    <th>Mecânica</th>
+  </tr>
+  <tr>
+    <td><span class="condition-type debuff">Debuff</span> <strong>Tipo</strong></td>
+    <td>Perda de visão</td>
+  </tr>
+  <tr>
+    <td><strong>Origem</strong></td>
+    <td>Flashbangs, pó nos olhos, fumaça densa, habilidades de luz/escuridão, dano nos olhos</td>
+  </tr>
+  <tr>
+    <td><strong>Efeito</strong></td>
+    <td>
+      Falha automática em testes que exigem visão<br>
+      Desvantagem em Combate Corpo-a-Corpo<br>
+      Combate à Distância reduzido a 1/4 do valor (deve ouvir o alvo)<br>
+      -30 em Percepção visual<br>
+      Velocidade de movimento reduzida pela metade (para evitar obstáculos)
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Duração</strong></td>
+    <td>
+      <strong>Cegueira Temporária:</strong> 1d6 rodadas (flash, pó)<br>
+      <strong>Cegueira Prolongada:</strong> 1d6 minutos (fumaça espessa)<br>
+      <strong>Cegueira por Dano:</strong> Até tratamento médico
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Mitigação</strong></td>
+    <td>
+      Personagens com Percepção 60+ podem usar audição para reduzir penalidades pela metade<br>
+      Habilidades de sentido alternativo (echolocation, sentir energia) podem anular completamente
+    </td>
+  </tr>
+</table>
+
+<h3>4.2 Surdo</h3>
+<table>
+  <tr>
+    <th>Aspecto</th>
+    <th>Mecânica</th>
+  </tr>
+  <tr>
+    <td><span class="condition-type debuff">Debuff</span> <strong>Tipo</strong></td>
+    <td>Perda de audição</td>
+  </tr>
+  <tr>
+    <td><strong>Origem</strong></td>
+    <td>Explosões próximas, ataques sônicos, dano nos ouvidos</td>
+  </tr>
+  <tr>
+    <td><strong>Efeito</strong></td>
+    <td>
+      Falha automática em testes que exigem audição<br>
+      -20 em Percepção<br>
+      -15 em Iniciativa (não ouve movimentos)<br>
+      Não pode se comunicar verbalmente sem olhar para o interlocutor<br>
+      Vulnerável a ataques vindos de trás/lados
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Duração</strong></td>
+    <td>
+      <strong>Surdez Temporária:</strong> 1d6 rodadas<br>
+      <strong>Surdez Prolongada:</strong> 1d6 horas<br>
+      <strong>Surdez por Dano:</strong> Até tratamento médico
+    </td>
+  </tr>
+</table>
+
+<h3>4.3 Amedrontado</h3>
+<table>
+  <tr>
+    <th>Aspecto</th>
+    <th>Mecânica</th>
+  </tr>
+  <tr>
+    <td><span class="condition-type mental">Mental</span> <strong>Tipo</strong></td>
+    <td>Efeito psicológico de terror</td>
+  </tr>
+  <tr>
+    <td><strong>Origem</strong></td>
+    <td>Habilidades intimidantes, presença opressiva, encontros com seres terríveis</td>
+  </tr>
+  <tr>
+    <td><strong>Efeito</strong></td>
+    <td>
+      <strong>Assustado (Leve):</strong>
+      <ul>
+        <li>-10 em todas as rolagens enquanto a fonte do medo estiver visível</li>
+        <li>Desvantagem em Força Mental</li>
+      </ul>
+      <strong>Aterrorizado (Grave):</strong>
+      <ul>
+        <li>-20 em todas as rolagens</li>
+        <li>Não pode se aproximar voluntariamente da fonte do medo</li>
+        <li>Deve usar Ação de Movimento para se afastar se possível</li>
+        <li>Se encurralado, fica Debilitado</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Aplicação</strong></td>
+    <td>
+      Teste oposto Persuasão (intimidação) vs Força Mental do alvo<br>
+      <strong>Sucesso:</strong> Assustado por 3 rodadas<br>
+      <strong>Sucesso Extremo:</strong> Aterrorizado por 2 rodadas<br>
+      <strong>Sucesso Crítico:</strong> Aterrorizado por 1d6 rodadas
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Recuperação</strong></td>
+    <td>
+      Duração natural OU<br>
+      Aliado pode usar Ação Padrão + Persuasão (40%) para encorajar (remove Assustado, reduz Aterrorizado a Assustado)<br>
+      Se a fonte do medo for destruída/removida, efeito termina imediatamente
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Imunidade</strong></td>
+    <td>Personagens com SAB 70+ têm Vantagem em resistir<br>Habilidades que concedem coragem ou Indomável Will podem conceder imunidade</td>
+  </tr>
+</table>
+
+<h3>4.4 Confuso</h3>
+<table>
+  <tr>
+    <th>Aspecto</th>
+    <th>Mecânica</th>
+  </tr>
+  <tr>
+    <td><span class="condition-type mental">Mental</span> <strong>Tipo</strong></td>
+    <td>Desorientação mental</td>
+  </tr>
+  <tr>
+    <td><strong>Origem</strong></td>
+    <td>Ilusões, ataques psíquicos, drogas, habilidades mentais</td>
+  </tr>
+  <tr>
+    <td><strong>Efeito</strong></td>
+    <td>
+      No início do turno do alvo, role 1d6:<br>
+      <strong>1-2:</strong> Age normalmente<br>
+      <strong>3-4:</strong> Não faz nada (perde o turno)<br>
+      <strong>5:</strong> Ataca o aliado mais próximo<br>
+      <strong>6:</strong> Ataca a si mesmo (ataque automático, sem teste)
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Duração</strong></td>
+    <td>1d4 rodadas</td>
+  </tr>
+  <tr>
+    <td><strong>Teste de Resistência</strong></td>
+    <td>
+      No fim de cada turno, role SAB:<br>
+      <strong>Sucesso Extremo:</strong> Remove imediatamente<br>
+      <strong>Sucesso:</strong> Age normalmente no próximo turno (sem rolar d6)<br>
+      <strong>Falha:</strong> Persiste
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Remoção</strong></td>
+    <td>Duração natural OU habilidades que removem efeitos mentais OU dano significativo (Ferimento Grave) pode "chocar" o alvo de volta à realidade (teste SAB 40%)</td>
+  </tr>
+</table>
+
+<h3>4.5 Encantado/Dominado</h3>
+<table>
+  <tr>
+    <th>Aspecto</th>
+    <th>Mecânica</th>
+  </tr>
+  <tr>
+    <td><span class="condition-type mental">Mental</span> <strong>Tipo</strong></td>
+    <td>Controle mental</td>
+  </tr>
+  <tr>
+    <td><strong>Origem</strong></td>
+    <td>Habilidades de controle mental, magia, técnicas psíquicas</td>
+  </tr>
+  <tr>
+    <td><strong>Efeito</strong></td>
+    <td>
+      <strong>Encantado:</strong>
+      <ul>
+        <li>Não pode atacar o controlador</li>
+        <li>Comandos do controlador recebem Vantagem em Persuasão</li>
+        <li>Pode resistir a comandos suicidas ou que violem princípios fundamentais</li>
+      </ul>
+      <strong>Dominado:</strong>
+      <ul>
+        <li>Controle completo pelo dominador</li>
+        <li>Age como se fosse o controlador tomando decisões</li>
+        <li>Pode executar comandos complexos</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Aplicação</strong></td>
+    <td>
+      Teste oposto INT/PRE do controlador vs SAB do alvo<br>
+      <strong>Sucesso:</strong> Encantado por 1d6 rodadas<br>
+      <strong>Sucesso Extremo:</strong> Dominado por 1d3 rodadas<br>
+      <strong>Sucesso Crítico:</strong> Dominado por 1d6 rodadas
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Quebra</strong></td>
+    <td>
+      <strong>Encantado:</strong> Dano ao alvo permite teste SAB para quebrar. Comando violando natureza do personagem permite teste SAB com Vantagem<br>
+      <strong>Dominado:</strong> Apenas dano severo (Ferimento Grave) ou duração natural. Teste SAB com Desvantagem ao final de cada turno.
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Imunidade</strong></td>
+    <td>SAB 80+ concede Vantagem em resistir. Algumas habilidades raciais concedem imunidade total.</td>
+  </tr>
+</table>
+
+<hr>
+
+<h2>CAPÍTULO 5 — CONDIÇÕES FÍSICAS ESPECIAIS</h2>
+
+<h3>5.1 Exaustão</h3>
+<table>
+  <tr>
+    <th>Nível</th>
+    <th>Efeito</th>
+  </tr>
+  <tr>
+    <td><strong>Nível 1</strong></td>
+    <td>Desvantagem em testes de FOR, DES, CON</td>
+  </tr>
+  <tr>
+    <td><strong>Nível 2</strong></td>
+    <td>Velocidade de movimento reduzida pela metade<br>Desvantagem em testes de FOR, DES, CON</td>
+  </tr>
+  <tr>
+    <td><strong>Nível 3</strong></td>
+    <td>Desvantagem em TODOS os testes e rolagens de ataque<br>Velocidade de movimento reduzida pela metade</td>
+  </tr>
+  <tr>
+    <td><strong>Nível 4</strong></td>
+    <td>PV máximo reduzido pela metade<br>Desvantagem em TODOS os testes<br>Não pode Correr</td>
+  </tr>
+  <tr>
+    <td><strong>Nível 5</strong></td>
+    <td>Velocidade de movimento reduzida a 1,5 metros<br>Não pode usar Ações Bônus<br>Custo de Energia de todas habilidades dobrado</td>
+  </tr>
+  <tr>
+    <td><strong>Nível 6</strong></td>
+    <td>Morte por exaustão completa</td>
+  </tr>
+</table>
+
+<div class="mechanic-box">
+  <strong>Recuperação de Exaustão:</strong>
+  <ul>
+    <li><strong>Descanso Longo:</strong> Remove 1 nível</li>
+    <li><strong>Descanso Completo (24h sem atividade):</strong> Remove 2 níveis</li>
+    <li><strong>Tratamento Médico + Descanso:</strong> Remove 2 níveis (requer Medicina 60+)</li>
+    <li><strong>Habilidades de Recuperação:</strong> Podem remover níveis específicos conforme descrição</li>
+  </ul>
+</div>
+
+<h3>5.2 Debilitado</h3>
+<table>
+  <tr>
+    <th>Aspecto</th>
+    <th>Mecânica</th>
+  </tr>
+  <tr>
+    <td><span class="condition-type debuff">Debuff</span> <strong>Tipo</strong></td>
+    <td>Enfraquecimento geral</td>
+  </tr>
+  <tr>
+    <td><strong>Origem</strong></td>
+    <td>Doenças, fome prolongada, efeitos de habilidades, reversão de transformações</td>
+  </tr>
+  <tr>
+    <td><strong>Efeito</strong></td>
+    <td>
+      Todas as rolagens têm Desvantagem<br>
+      Dano reduzido pela metade (incluindo BD)<br>
+      Absorção reduzida pela metade<br>
+      Não pode usar transformações ou habilidades que consomem 5+ de Energia
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Duração</strong></td>
+    <td>Variável conforme a fonte:<br>
+      <strong>Habilidade:</strong> 1d6 rodadas<br>
+      <strong>Doença:</strong> Até ser curada<br>
+      <strong>Fome:</strong> Até se alimentar adequadamente
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Recuperação</strong></td>
+    <td>Descanso Longo + alimentação adequada OU tratamento médico OU habilidades de cura</td>
+  </tr>
+</table>
+
+<h3>5.3 Invisível</h3>
+<table>
+  <tr>
+    <th>Aspecto</th>
+    <th>Mecânica</th>
+  </tr>
+  <tr>
+    <td><span class="condition-type special">Positivo</span> <strong>Tipo</strong></td>
+    <td>Não pode ser visto</td>
+  </tr>
+  <tr>
+    <td><strong>Origem</strong></td>
+    <td>Habilidades de invisibilidade, camuflagem perfeita, técnicas especiais</td>
+  </tr>
+  <tr>
+    <td><strong>Efeito</strong></td>
+    <td>
+      <strong>Para o Invisível:</strong>
+      <ul>
+        <li>Vantagem em Furtividade</li>
+        <li>Ataques têm Vantagem</li>
+        <li>Primeiro ataque em combate é Surpresa (alvo não pode defender)</li>
+      </ul>
+      <strong>Contra o Invisível:</strong>
+      <ul>
+        <li>Ataques têm Desvantagem</li>
+        <li>Deve adivinhar localização (Percepção 60+) por som, deslocamento de ar, pegadas</li>
+        <li>Ataques de área têm chance normal se acertar a área correta</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Quebra</strong></td>
+    <td>
+      Atacar quebra invisibilidade (decisão do Narrador baseado na fonte)<br>
+      Ser coberto por substância visível (tinta, água, pó) revela silhueta<br>
+      Habilidades de detecção podem revelar
+    </td>
+  </tr>
+</table>
+
+<h3>5.4 Voando</h3>
+<table>
+  <tr>
+    <th>Aspecto</th>
+    <th>Mecânica</th>
+  </tr>
+  <tr>
+    <td><span class="condition-type special">Positivo</span> <strong>Tipo</strong></td>
+    <td>No ar</td>
+  </tr>
+  <tr>
+    <td><strong>Origem</strong></td>
+    <td>Habilidades de voo, asas, levitação</td>
+  </tr>
+  <tr>
+    <td><strong>Efeito</strong></td>
+    <td>
+      <strong>Vantagens:</strong>
+      <ul>
+        <li>+10 em Esquiva contra ataques corpo-a-corpo de oponentes no chão</li>
+        <li>Ignora terreno difícil</li>
+        <li>Pode se mover verticalmente</li>
+        <li>Oponentes terrestres têm Desvantagem em ataques corpo-a-corpo</li>
+      </ul>
+      <strong>Desvantagens:</strong>
+      <ul>
+        <li>Ataques à distância vindos de cima não têm penalidade</li>
+        <li>Se sofrer Ferimento Grave, teste SAB ou cai</li>
+        <li>Ficar Incapacitado causa queda automática</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Queda</strong></td>
+    <td>
+      <strong>Dano de Queda:</strong> 1d6 por 3 metros (máximo 10d6)<br>
+      <strong>Teste Acrobacia:</strong> Para reduzir dano pela metade
+    </td>
+  </tr>
+</table>
+
+<h3>5.5 Submerso/Afogamento</h3>
+<table>
+  <tr>
+    <th>Aspecto</th>
+    <th>Mecânica</th>
+  </tr>
+  <tr>
+    <td><span class="condition-type special">Ambiental</span> <strong>Tipo</strong></td>
+    <td>Debaixo d'água</td>
+  </tr>
+  <tr>
+    <td><strong>Prender Respiração</strong></td>
+    <td>
+      Um personagem pode prender a respiração por número de rodadas = CON ÷ 10 (mínimo 1)<br>
+      <strong>Preparado:</strong> Dobra duração<br>
+      <strong>Não preparado:</strong> Metade da duração
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Afogamento</strong></td>
+    <td>
+      Após acabar o ar:<br>
+      <strong>1ª rodada:</strong> Desvantagem em todos os testes<br>
+      <strong>2ª rodada em diante:</strong> Sofre 1d6 de dano por rodada (ignora Absorção)<br>
+      <strong>0 PV:</strong> Começa a morrer (como regra normal)<br>
+      <strong>Salvamento:</strong> Primeiros Socorros (40%) para estabilizar + CPR
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Combate Subaquático</strong></td>
+    <td>
+      <strong>Sem adaptação aquática:</strong>
+      <ul>
+        <li>Ataques corpo-a-corpo: Desvantagem</li>
+        <li>Ataques à distância (não-especializados): Impossível ou alcance reduzido a 1/4</li>
+        <li>Movimento reduzido pela metade</li>
+        <li>Visibilidade reduzida</li>
+      </ul>
+      <strong>Com adaptação:</strong> Sem penalidades
+    </td>
+  </tr>
+</table>
+
+<hr>
+
+<h2>CAPÍTULO 6 — CONDIÇÕES STACKABLE (ACUMULÁVEIS)</h2>
+
+<div class="note">
+  <strong>Conceito:</strong> Algumas condições se acumulam, aumentando efeito com cada aplicação. Geralmente têm limite máximo de stacks.
+</div>
+
+<h3>6.1 Lentidão</h3>
+<table>
+  <tr>
+    <th>Aspecto</th>
+    <th>Mecânica</th>
+  </tr>
+  <tr>
+    <td><span class="condition-type stack">Stack</span> <strong>Tipo</strong></td>
+    <td>Redução gradual de velocidade</td>
+  </tr>
+  <tr>
+    <td><strong>Origem</strong></td>
+    <td>Gelo parcial, lama, habilidades de tempo, peso aumentado</td>
+  </tr>
+  <tr>
+    <td><strong>Efeito por Stack</strong></td>
+    <td>
+      <strong>Stack 1:</strong> -3 metros de movimento, -5 em Iniciativa<br>
+      <strong>Stack 2:</strong> -6 metros de movimento, -10 em Iniciativa, -5 em Esquiva<br>
+      <strong>Stack 3:</strong> -9 metros de movimento, -15 em Iniciativa, -10 em Esquiva<br>
+      <strong>Stack 4:</strong> Movimento reduzido a 1,5m, -20 em Iniciativa, -15 em Esquiva, Desvantagem em DES<br>
+      <strong>Stack 5 (Máximo):</strong> Movimento 0 (vira Enraizado), Desvantagem em DES e Esquiva
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Duração</strong></td>
+    <td>Cada stack dura 3 rodadas independentemente. Perde 1 stack por rodada após parar de acumular.</td>
+  </tr>
+  <tr>
+    <td><strong>Remoção</strong></td>
+    <td>Remover fonte (derreter gelo, sair da lama) OU habilidades que removem debuffs (remove todos os stacks)</td>
+  </tr>
+</table>
+
+<h3>6.2 Marcado/Rastreado</h3>
+<table>
+  <tr>
+    <th>Aspecto</th>
+    <th>Mecânica</th>
+  </tr>
+  <tr>
+    <td><span class="condition-type stack">Stack</span> <strong>Tipo</strong></td>
+    <td>Vulnerabilidade aumentada</td>
+  </tr>
+  <tr>
+    <td><strong>Origem</strong></td>
+    <td>Habilidades de marcação, ataques que aplicam "Hunter's Mark", rastreadores</td>
+  </tr>
+  <tr>
+    <td><strong>Efeito por Stack</strong></td>
+    <td>
+      <strong>Stack 1:</strong> +1d4 de dano de ataques do marcador<br>
+      <strong>Stack 2:</strong> +1d6 de dano de ataques do marcador<br>
+      <strong>Stack 3:</strong> +1d8 de dano de ataques do marcador, -5 em Esquiva contra marcador<br>
+      <strong>Stack 4:</strong> +1d10 de dano de ataques do marcador, -10 em Esquiva contra marcador<br>
+      <strong>Stack 5 (Máximo):</strong> +2d8 de dano de ataques do marcador, -15 em Esquiva contra marcador, marcador tem Vantagem em todos ataques
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Duração</strong></td>
+    <td>Cada stack dura até o fim do combate OU até marcador ser Incapacitado</td>
+  </tr>
+  <tr>
+    <td><strong>Aplicação</strong></td>
+    <td>Normalmente requer acerto de ataque ou habilidade específica. Algumas habilidades aplicam múltiplos stacks de uma vez.</td>
+  </tr>
+</table>
+
+<h3>6.3 Inspirado/Energizado</h3>
+<table>
+  <tr>
+    <th>Aspecto</th>
+    <th>Mecânica</th>
+  </tr>
+  <tr>
+    <td><span class="condition-type stack">Stack</span> <span class="condition-type special">Positivo</span> <strong>Tipo</strong></td>
+    <td>Aumento gradual de poder (estilo shounen)</td>
+  </tr>
+  <tr>
+    <td><strong>Origem</strong></td>
+    <td>Receber dano, ver aliado cair, momentos dramáticos, habilidades especiais</td>
+  </tr>
+  <tr>
+    <td><strong>Ganho de Stacks</strong></td>
+    <td>
+      <strong>Sofrer Ferimento Grave:</strong> +1 stack<br>
+      <strong>Aliado cair a 0 PV:</strong> +2 stacks<br>
+      <strong>Acertar Black Flash (se tiver habilidade):</strong> +1 stack<br>
+      <strong>Habilidades especiais:</strong> Conforme descrição
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Efeito por Stack</strong></td>
+    <td>
+      <strong>Stack 1:</strong> +1d4 em dano, +5 em Iniciativa<br>
+      <strong>Stack 2:</strong> +1d6 em dano, +5 em Iniciativa, +5 em Combate Corpo-a-Corpo<br>
+      <strong>Stack 3:</strong> +1d8 em dano, +10 em Iniciativa, +10 em Combate Corpo-a-Corpo, +1 em Absorção<br>
+      <strong>Stack 4:</strong> +1d10 em dano, +10 em Iniciativa, +10 em Combate Corpo-a-Corpo, +2 em Absorção, custo de Energia reduzido em 1<br>
+      <strong>Stack 5 (Máximo):</strong> +2d8 em dano, +15 em Iniciativa, +15 em Combate Corpo-a-Corpo, +3 em Absorção, custo de Energia reduzido em 2, Vantagem em FOR
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Duração</strong></td>
+    <td>Stacks duram até o fim do combate. Perde 1 stack a cada 2 rodadas sem atividade dramática.</td>
+  </tr>
+  <tr>
+    <td><strong>Limite</strong></td>
+    <td>Máximo 5 stacks. Habilidades raciais podem alterar esse limite.</td>
+  </tr>
+</table>
+
+<div class="example">
+  <strong>Exemplo Temático Shounen:</strong> Naruto está lutando. Ele sofre um Ferimento Grave (+1 stack Inspirado). Sasuke cai a 0 PV (+2 stacks, total 3). Naruto agora tem +1d8 de dano, +10 em Iniciativa e Combate, +1 Absorção. Ele usa essa inspiração para virar a batalha!
+</div>
+
+<hr>
+
+<h2>CAPÍTULO 7 — INTERAÇÕES ENTRE CONDIÇÕES</h2>
+
+<h3>7.1 Condições que se Anulam</h3>
+<table>
+  <tr>
+    <th>Condição A</th>
+    <th>Condição B</th>
+    <th>Resultado</th>
+  </tr>
+  <tr>
+    <td>Queimadura</td>
+    <td>Congelado/Enraizado (gelo)</td>
+    <td>Ambas se anulam; efeito secundário: vapor denso (Cego por 1 rodada em 3m de raio)</td>
+  </tr>
+  <tr>
+    <td>Envenenamento</td>
+    <td>Queimadura Interna (fogo)</td>
+    <td>Veneno é parcialmente queimado; reduz gravidade do veneno em 1 nível</td>
+  </tr>
+  <tr>
+    <td>Invisível</td>
+    <td>Coberto (tinta, água, sangue)</td>
+    <td>Silhueta se torna visível; perde Vantagem de Invisível mas mantém camuflagem parcial (+10 Furtividade)</td>
+  </tr>
+</table>
+
+<h3>7.2 Condições que se Amplificam</h3>
+<table>
+  <tr>
+    <th>Condição A</th>
+    <th>Condição B</th>
+    <th>Resultado</th>
+  </tr>
+  <tr>
+    <td>Sangramento</td>
+    <td>Envenenamento</td>
+    <td>Veneno se espalha mais rápido; dano de veneno aumenta em +2 por rodada</td>
+  </tr>
+  <tr>
+    <td>Molhado</td>
+    <td>Ataque Elétrico</td>
+    <td>Dano elétrico dobrado; aplicação automática de Paralisia Curta</td>
+  </tr>
+  <tr>
+    <td>Caído</td>
+    <td>Agarrado</td>
+    <td>Levantar-se impossível; libertação tem Desvantagem adicional</td>
+  </tr>
+  <tr>
+    <td>Cego</td>
+    <td>Surdo</td>
+    <td>Todas as penalidades dobradas; movimento reduzido a 1/4; Esquiva -40</td>
+  </tr>
+</table>
+
+<h3>7.3 Condições Incompatíveis</h3>
+<p>Algumas condições não podem coexistir. A mais recente substitui a anterior:</p>
+<ul>
+  <li><strong>Voando</strong> e <strong>Enraizado</strong></li>
+  <li><strong>Invisível</strong> e <strong>Brilhante/Iluminado</strong></li>
+  <li><strong>Paralisado</strong> e <strong>Confuso</strong> (paralisado impede ação)</li>
+  <li><strong>Inspirado</strong> e <strong>Amedrontado</strong> (força de vontade vs medo)</li>
+</ul>
+
+<hr>
+
+<h2>CAPÍTULO 8 — CONDIÇÕES AVANÇADAS E ESPECÍFICAS</h2>
+
+<div class="warning">
+  <strong>Nota:</strong> Estas condições são mais complexas e geralmente resultam de habilidades especiais, magias poderosas, ou cenários específicos.
+</div>
+
+<h3>8.1 Petrificado</h3>
+<table>
+  <tr>
+    <th>Aspecto</th>
+    <th>Mecânica</th>
+  </tr>
+  <tr>
+    <td><span class="condition-type control">Controle</span> <strong>Tipo</strong></td>
+    <td>Transformado em pedra</td>
+  </tr>
+  <tr>
+    <td><strong>Efeito</strong></td>
+    <td>
+      Completamente incapacitado<br>
+      Absorção aumenta para 10<br>
+      Imunidade a venenos, sangramento, dor<br>
+      Inconsciente; não envelhece<br>
+      Se reduzido a 0 PV enquanto petrificado, a estátua quebra (morte permanente)
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Reversão</strong></td>
+    <td>
+      Habilidade/magia específica de des-petrificação<br>
+      Alquimia avançada (Medicina 80+, ingredientes raros)<br>
+      Pode ser irreversível dependendo da fonte
+    </td>
+  </tr>
+</table>
+
+<h3>8.2 Berserk</h3>
+<table>
+  <tr>
+    <th>Aspecto</th>
+    <th>Mecânica</th>
+  </tr>
+  <tr>
+    <td><span class="condition-type special">Complexo</span> <strong>Tipo</strong></td>
+    <td>Fúria incontrolável</td>
+  </tr>
+  <tr>
+    <td><strong>Origem</strong></td>
+    <td>Habilidades raciais (Legendary Super Saiyan), perda extrema de sanidade, drogas de combate</td>
+  </tr>
+  <tr>
+    <td><strong>Efeito</strong></td>
+    <td>
+      <strong>Bônus:</strong>
+      <ul>
+        <li>+3d8 de dano em todos os ataques</li>
+        <li>Vantagem em FOR e CON</li>
+        <li>Imunidade a Amedrontado, Confuso, Dor</li>
+        <li>+4 em Absorção</li>
+      </ul>
+      <strong>Desvantagens:</strong>
+      <ul>
+        <li>Ataca o alvo mais próximo (aliados inclusos)</li>
+        <li>Não pode usar estratégia ou habilidades complexas</li>
+        <li>-20 em INT e SAB</li>
+        <li>Não pode falar coerentemente</li>
+        <li>Desvantagem em Esquiva (luta agressivamente, não defensivamente)</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Duração</strong></td>
+    <td>
+      Determinada pela fonte (geralmente 1d6 rodadas)<br>
+      A cada rodada, role SAB com Desvantagem para tentar recuperar controle
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Após Berserk</strong></td>
+    <td>Sofre 2 níveis de Exaustão automaticamente</td>
+  </tr>
+</table>
+
+<h3>8.3 Transformado/Polimorfia</h3>
+<table>
+  <tr>
+    <th>Aspecto</th>
+    <th>Mecânica</th>
+  </tr>
+  <tr>
+    <td><span class="condition-type special">Complexo</span> <strong>Tipo</strong></td>
+    <td>Mudança de forma forçada</td>
+  </tr>
+  <tr>
+    <td><strong>Origem</strong></td>
+    <td>Habilidades de transformação (Transfiguration Beam de Majin), maldições</td>
+  </tr>
+  <tr>
+    <td><strong>Efeito</strong></td>
+    <td>
+      Forma física muda para criatura/objeto escolhido pelo transformador<br>
+      <strong>Estatísticas:</strong> Usa estatísticas da nova forma SE for criatura<br>
+      <strong>Objeto:</strong> Não pode agir, PV temporariamente = metade do original, Absorção 0<br>
+      <strong>Equipamento:</strong> Se funde à nova forma ou cai no chão (decisão do transformador)<br>
+      <strong>Consciência:</strong> Mantém memórias e consciência mas não pode falar ou usar habilidades originais
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Duração</strong></td>
+    <td>
+      Determinada pelo transformador (permanente, X rodadas, etc.)<br>
+      Sofrer dano pode quebrar transformação (teste SAB 40+ para reverter)<br>
+      Morte do transformador geralmente reverte
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Resistência</strong></td>
+    <td>
+      Teste oposto INT/PRE do transformador vs SAB do alvo<br>
+      SAB 80+ tem Vantagem<br>
+      Criaturas muito poderosas podem ser imunes
+    </td>
+  </tr>
+</table>
+
+<h3>8.4 Absorvido</h3>
+<table>
+  <tr>
+    <th>Aspecto</th>
+    <th>Mecânica</th>
+  </tr>
+  <tr>
+    <td><span class="condition-type special">Complexo</span> <strong>Tipo</strong></td>
+    <td>Capturado dentro de outro ser</td>
+  </tr>
+  <tr>
+    <td><strong>Origem</strong></td>
+    <td>Habilidade Absorption de Majin, habilidades similares</td>
+  </tr>
+  <tr>
+    <td><strong>Efeito</strong></td>
+    <td>
+      <strong>Para o Absorvido:</strong>
+      <ul>
+        <li>Incapacitado (não pode agir externamente)</li>
+        <li>Consciente do que está acontecendo fora</li>
+        <li>Pode tentar influência mental (SAB vs SAB do absorvedor, 1x por hora)</li>
+      </ul>
+      <strong>Para o Absorvedor:</strong>
+      <ul>
+        <li>Ganha bônus conforme habilidade de Absorção</li>
+        <li>Pode acessar algumas habilidades/perícias do absorvido</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Libertação</strong></td>
+    <td>
+      Absorvedor pode expelir voluntariamente (ação padrão)<br>
+      Morte do absorvedor liberta automaticamente (absorvido sai Incapacitado)<br>
+      Habilidades específicas podem forçar expulsão<br>
+      Dano massivo ao absorvedor pode causar expulsão involuntária (Narrador decide)
+    </td>
+  </tr>
+</table>
+
+<hr>
+
+<h2>CAPÍTULO 9 — GERENCIAMENTO DE CONDIÇÕES EM JOGO</h2>
+
+<h3>9.1 Rastreamento de Condições</h3>
+
+<div class="mechanic-box">
+  <strong>Métodos Recomendados:</strong>
+  <ul>
+    <li><strong>Marcadores Físicos:</strong> Tokens, dados extras, ou clipes coloridos no lado da ficha</li>
+    <li><strong>Área de Status na Ficha:</strong> Espaço dedicado para anotar condições ativas</li>
+    <li><strong>Cartões de Condição:</strong> Imprima cards com as condições para colocar perto da ficha</li>
+    <li><strong>Digital:</strong> Apps de rastreamento, planilhas compartilhadas</li>
+  </ul>
+</div>
+
+<h3>9.2 Prioridade de Resolução</h3>
+<p>Quando múltiplas condições estão ativas, resolva na seguinte ordem:</p>
+<ol>
+  <li><strong>Início do Turno do Personagem:</strong>
+    <ul>
+      <li>Dano contínuo (Sangramento, Veneno, Queimadura, Corrosão)</li>
+      <li>Testes de resistência (Paralisia, Confusão, Veneno)</li>
+      <li>Efeitos de Berserk/Confuso (determinam ação do turno)</li>
+      <li>Redução de stacks (Lentidão, outros acumuláveis)</li>
+    </ul>
+  </li>
+  <li><strong>Durante a Ação:</strong>
+    <ul>
+      <li>Aplica modificadores às rolagens (Cego, Amedrontado, etc.)</li>
+      <li>Verifica limitações (Agarrado não pode se mover, etc.)</li>
+    </ul>
+  </li>
+  <li><strong>Ao Sofrer Dano:</strong>
+    <ul>
+      <li>Aplica Absorção reduzida/modificada</li>
+      <li>Verifica quebra de condições (Invisível ao atacar, Concentração ao levar dano)</li>
+    </ul>
+  </li>
+  <li><strong>Fim do Turno:</strong>
+    <ul>
+      <li>Reduz durações</li>
+      <li>Remove condições expiradas</li>
+      <li>Aplica efeitos de fim de turno</li>
+    </ul>
+  </li>
+</ol>
+
+<h3>9.3 Limite de Condições Simultâneas</h3>
+<div class="note">
+  <strong>Regra Opcional:</strong> Para evitar sobrecarga de rastreamento, limite o número de condições diferentes que um personagem pode ter simultaneamente a <strong>5 condições negativas</strong> e <strong>3 condições positivas</strong>. Quando esse limite é atingido, novas condições do mesmo tipo substituem as mais antigas, ou não se aplicam (decisão do Narrador baseada na narrativa).
+</div>
+
+<h3>9.4 Condições e Morte</h3>
+<p>Condições que causam dano contínuo podem levar à morte:</p>
+<ul>
+  <li>Dano contínuo continua mesmo a 0 PV ou menos (personagem continua sangrando, queimando, etc.)</li>
+  <li>Parceiros devem remover condições fatais ANTES de estabilizar</li>
+  <li>Morrer com certas condições pode ter consequências narrativas (corpo consumido pelo fogo, petrificado permanentemente, etc.)</li>
+</ul>
+
+<hr>
+
+<h2>CAPÍTULO 10 — CRIANDO SUAS PRÓPRIAS CONDIÇÕES</h2>
+
+<h3>10.1 Framework para Condições Customizadas</h3>
+
+<div class="mechanic-box">
+  <strong>Checklist de Design:</strong>
+  <ol>
+    <li><strong>Nome e Tema:</strong> Deve ser evocativo e claro</li>
+    <li><strong>Tipo:</strong> DoT, Controle, Mental, Debuff, ou combinação</li>
+    <li><strong>Efeito Mecânico:</strong> Expresso em termos do sistema (modificadores numéricos, Vantagem/Desvantagem, etc.)</li>
+    <li><strong>Aplicação:</strong> Como é causada? Teste oposto? Sucesso automático em certas situações?</li>
+    <li><strong>Duração:</strong> X rodadas? Até removida? Permanente?</li>
+    <li><strong>Remoção/Mitigação:</strong> Como a condição termina?</li>
+    <li><strong>Stackabilidade:</strong> Pode acumular? Qual o limite?</li>
+    <li><strong>Interações:</strong> Interage com outras condições existentes?</li>
+  </ol>
+</div>
+
+<h3>10.2 Exemplos de Condições Customizadas</h3>
+
+<div class="example">
+  <strong>Exemplo 1: "Energia Drenada" (para cenário com muita magia/ki)</strong><br>
+  <strong>Tipo:</strong> Debuff/Resource Drain<br>
+  <strong>Origem:</strong> Habilidades de absorção de energia, ambientes anti-mágicos<br>
+  <strong>Efeito:</strong> Perde 1d4 de Energia no início de cada turno. Custo de habilidades aumenta em +2.<br>
+  <strong>Duração:</strong> 1d6 rodadas<br>
+  <strong>Remoção:</strong> Descanso Curto OU habilidades de restauração de energia<br>
+  <strong>Stackabilidade:</strong> Não acumula, mas reaplica duração
+</div>
+
+<div class="example">
+  <strong>Exemplo 2: "Marca do Caçador" (para campanhas com foco em rastreamento)</strong><br>
+  <strong>Tipo:</strong> Stack/Marcação<br>
+  <strong>Origem:</strong> Habilidades de rastreadores, ataques especiais<br>
+  <strong>Efeito por Stack:</strong><br>
+  - Stack 1-2: Marcador sabe direção geral do alvo a até 1km<br>
+  - Stack 3-4: Marcador sabe localização exata a até 500m<br>
+  - Stack 5: Marcador sabe localização exata sem limite de distância, +1d8 dano contra alvo<br>
+  <strong>Duração:</strong> Cada stack dura 24 horas<br>
+  <strong>Remoção:</strong> Passar por água corrente remove 1 stack. Habilidades de anti-rastreamento. Morte do marcador.<br>
+  <strong>Máximo:</strong> 5 stacks
+</div>
+
+<h3>10.3 Balanceamento de Condições</h3>
+
+<table>
+  <tr>
+    <th>Severidade</th>
+    <th>Exemplos de Efeitos</th>
+    <th>Duração Típica</th>
+  </tr>
+  <tr>
+    <td><strong>Leve</strong></td>
+    <td>-5 a -10 em perícias específicas<br>Desvantagem em 1 tipo de teste<br>1d4 dano/rodada</td>
+    <td>1-3 rodadas</td>
+  </tr>
+  <tr>
+    <td><strong>Moderada</strong></td>
+    <td>-10 a -20 em múltiplas perícias<br>Desvantagem em múltiplos testes<br>1d6-1d8 dano/rodada<br>Redução de movimento</td>
+    <td>3-6 rodadas</td>
+  </tr>
+  <tr>
+    <td><strong>Severa</strong></td>
+    <td>Perda de ações<br>Desvantagem em tudo<br>1d10+ dano/rodada<br>Incapacitação parcial</td>
+    <td>1d6 rodadas OU até tratamento</td>
+  </tr>
+  <tr>
+    <td><strong>Devastadora</strong></td>
+    <td>Incapacitação completa<br>Morte possível se não tratada<br>Mudanças permanentes</td>
+    <td>Até tratamento especializado</td>
+  </tr>
+</table>
+
+<div class="warning">
+  <strong>Regra de Ouro:</strong> Condições devem ser impactantes mas não frustrantes. Se uma condição remove totalmente a agência do jogador por mais de 3 rodadas sem possibilidade de resistência, ela precisa ser rebalanceada.
+</div>
+
+<hr>
+
+<h2>APÊNDICE A — TABELA RÁPIDA DE CONDIÇÕES</h2>
+
+<table>
+  <tr>
+    <th>Condição</th>
+    <th>Efeito Principal</th>
+    <th>Remoção Rápida</th>
+  </tr>
+  <tr>
+    <td>Agarrado</td>
+    <td>Movimento 0, Desvantagem DES</td>
+    <td>FOR vs FOR ou Acrobacia vs Atletismo</td>
+  </tr>
+  <tr>
+    <td>Amedrontado</td>
+    <td>-10/-20 em rolagens, fuga forçada</td>
+    <td>Fonte removida ou Persuasão aliado</td>
+  </tr>
+  <tr>
+    <td>Atordoado</td>
+    <td>Perde ações, Desvantagem</td>
+    <td>Espera ou Primeiros Socorros</td>
+  </tr>
+  <tr>
+    <td>Berserk</td>
+    <td>+3d8 dano mas ataca todos</td>
+    <td>SAB com Desvantagem cada rodada</td>
+  </tr>
+  <tr>
+    <td>Cego</td>
+    <td>Falha testes visuais, Desvantagem combate</td>
+    <td>Duração natural ou tratamento</td>
+  </tr>
+  <tr>
+    <td>Caído</td>
+    <td>Movimento ½, ataques contra têm Vantagem</td>
+    <td>Ação de Movimento para levantar</td>
+  </tr>
+  <tr>
+    <td>Confuso</td>
+    <td>Ações aleatórias (1d6)</td>
+    <td>SAB no fim do turno ou dano grande</td>
+  </tr>
+  <tr>
+    <td>Corrosão</td>
+    <td>1d6/rodada + degrada equipamento</td>
+    <td>Água abundante ou neutralizador</td>
+  </tr>
+  <tr>
+    <td>Debilitado</td>
+    <td>Todas rolagens Desvantagem, dano ½</td>
+    <td>Descanso Longo + comida</td>
+  </tr>
+  <tr>
+    <td>Dominado</td>
+    <td>Controlador toma decisões</td>
+    <td>Ferimento Grave + SAB</td>
+  </tr>
+  <tr>
+    <td>Encantado</td>
+    <td>Não ataca controlador</td>
+    <td>Dano ou comando contra natureza</td>
+  </tr>
+  <tr>
+    <td>Enraizado</td>
+    <td>Não pode mover, -20 Esquiva</td>
+    <td>FOR 50% ou quebrar vínculo</td>
+  </tr>
+  <tr>
+    <td>Envenenamento</td>
+    <td>1d4-1d8/rodada + penalidades CON/FOR</td>
+    <td>CON cada turno ou Medicina</td>
+  </tr>
+  <tr>
+    <td>Exaustão Nv 1-6</td>
+    <td>Crescente incapacitação até morte</td>
+    <td>Descanso Longo (1 nível/descanso)</td>
+  </tr>
+  <tr>
+    <td>Inspirado</td>
+    <td>+dano e bônus (stack 1-5)</td>
+    <td>Fim do combate</td>
+  </tr>
+  <tr>
+    <td>Lentidão</td>
+    <td>Movimento reduzido (stack 1-5)</td>
+    <td>Remover fonte ou esperar</td>
+  </tr>
+  <tr>
+    <td>Marcado</td>
+    <td>Marcador causa +dano (stack 1-5)</td>
+    <td>Fim do combate</td>
+  </tr>
+  <tr>
+    <td>Paralisado</td>
+    <td>Não pode agir, Absorção 0</td>
+    <td>CON cada turno ou Medicina 60%</td>
+  </tr>
+  <tr>
+    <td>Petrificado</td>
+    <td>Incapacitado, Absorção 10</td>
+    <td>Habilidade específica ou alquimia</td>
+  </tr>
+  <tr>
+    <td>Queimadura</td>
+    <td>1d6 fogo/rodada, -5 Acrobacia</td>
+    <td>Parar/Derrubar/Rolar ou água</td>
+  </tr>
+  <tr>
+    <td>Sangramento</td>
+    <td>1d4-1d8/rodada (ignora Absorção)</td>
+    <td>Primeiros Socorros 50% ou esperar</td>
+  </tr>
+  <tr>
+    <td>Submerso</td>
+    <td>Prender respiração CON÷10 rodadas</td>
+    <td>Sair da água</td>
+  </tr>
+  <tr>
+    <td>Surdo</td>
+    <td>-20 Percepção, -15 Iniciativa</td>
+    <td>Duração ou tratamento</td>
+  </tr>
+  <tr>
+    <td>Transformado</td>
+    <td>Vira objeto/criatura, não pode agir normalmente</td>
+    <td>Dano quebra (SAB 40%) ou duração</td>
+  </tr>
+</table>
+
+<hr>
+
+<h2>APÊNDICE B — DICAS PARA NARRADORES</h2>
+
+<h3>B.1 Tornando Condições Narrativamente Interessantes</h3>
+<p>Condições não são apenas números - são oportunidades narrativas:</p>
+<ul>
+  <li><strong>Descreva o Efeito:</strong> "Você está Sangrando" → "Sangue escorre do seu braço esquerdo, formando uma poça a seus pés"</li>
+  <li><strong>Consequências Ambientais:</strong> Sangramento deixa rastro. Queimadura pode espalhar fogo. Veneno pode afetar outros se o personagem for tocado.</li>
+  <li><strong>Roleplay Encorajado:</strong> Incentive jogadores a interpretarem condições. Um personagem Amedrontado deveria agir com medo.</li>
+  <li><strong>Momentos Heroicos:</strong> Personagens superando condições severas (lutando Cego, resistindo a Controle Mental) criam momentos memoráveis.</li>
+</ul>
+
+<h3>B.2 Ajustando Dificuldade com Condições</h3>
+<ul>
+  <li><strong>Combates Fáceis:</strong> Poucas condições, fáceis de remover</li>
+  <li><strong>Combates Médios:</strong> Condições moderadas, requerem ação dedicada para remover</li>
+  <li><strong>Combates Difíceis:</strong> Múltiplas condições severas, stackables, condições que se amplificam</li>
+  <li><strong>Boss Fights:</strong> Condições únicas, mecânicas de fase que aplicam condições, necessidade de estratégia específica para mitigar</li>
+</ul>
+
+<h3>B.3 Sinalizando Condições para Jogadores</h3>
+<p>Sempre deixe claro quando uma condição está prestes a ser aplicada:</p>
+<ul>
+  <li><strong>"O veneno da lâmina brilha com luz esmeralda"</strong> - sinaliza possível Envenenamento</li>
+  <li><strong>"O grito do espectro penetra sua mente"</strong> - sinaliza possível efeito Mental</li>
+  <li><strong>"Chamas envolvem a sala"</strong> - sinaliza possível Queimadura</li>
+</ul>
+<p>Isso permite contraplay estratégico e evita frustrações de "não sabia que poderia acontecer isso".</p>
+
+<hr>
+
 <h2>CAPÍTULO 6 — REFERÊNCIA</h2>
 
 <h3>6.1 Calibração de Probabilidades</h3>
